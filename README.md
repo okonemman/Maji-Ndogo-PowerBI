@@ -9,9 +9,12 @@
 
 This data analysis project aims to provide insight into the various levels of access of regions to clean, drinkable and affordable water, as part of the United Nations Sustainable Development Goals. We focus particularly on a region called Maji Ndogo as we plan to solve the water crisis it has been facing over the years. By analyzing and transforming various aspects of the different datasets given, we seek to gain a better understanding of the regions, identify trends and relationships between these trends, and provide data-driven solutions that will relieve Maji Ndogo of the problems and their resulting effects that it suffers.
 
-![Summary sheet](https://github.com/okonemman/Maji_Ndogo_Water_Project/assets/54300962/2a4001cb-4444-4e40-a2df-d00820e59302)
+![majindogo](https://github.com/okonemman/Maji_Ndogo_Water_Project/assets/54300962/4098d184-bc85-4e11-a7fa-ee6355816f32)
 
-![national report](https://github.com/okonemman/Maji_Ndogo_Water_Project/assets/54300962/8130edb3-7621-4985-91fa-88279b11a5b0)
+
+
+
+![majindogo](https://github.com/okonemman/Maji_Ndogo_Water_Project/assets/54300962/6919c25e-53e6-4005-8b7a-7ce59749529d)
 
 ### Data Sources
 
@@ -59,6 +62,7 @@ EDA involved exploring the water services data and the queue related crime data 
 ### Data Analysis
 
 ```sql
+-- this piece of code extracts the respective water sources and orders them with respect to the total number of people they serve, from lowest to highest.
 SELECT 
     type_of_water_source,
     SUM(number_of_people_served) AS tot_pple_served,
@@ -70,6 +74,7 @@ order by tot_pple_served
 ```
 
 ```sql
+-- this code gives the hours of the day the people visit the water sources and the average amount of time spent on the queues on each day of the week
 SELECT 
     TIME_FORMAT(TIME(time_of_record), '%H:00') as hour_of_day,
     round(avg(CASE
@@ -84,6 +89,7 @@ SELECT
     order by hour_of_day
     ```
 ```sql
+-- this code joins the auditor report to the visits table and makes sure the result only shows where visits were made once
 SELECT 
     visits.record_id,
     water_quality.subjective_quality_score as employee_score,
@@ -107,9 +113,16 @@ visits.visit_count = 1
 
 ### Results/Findings
 
-mornings and evenings have the longest queue times.
-there were cases of impropriety by employees including accepting of cash bribes.
-more women and children were victims of crime during their visits to the water sources than men
+- mornings and evenings have the longest queue times.
+- there were cases of impropriety by employees including accepting of cash bribes.
+- more women and children were victims of crime during their visits to the water sources than men.
+
+### Recommendations
+
+- taps in households should be fixed so there will be little need for trip to other water sources outside.
+- in the places that have more queue times, more water sources should be constructed or already existing water sources nearby should be purified.
+- more men should make trips to water sources or accompany women and girls on their trips.
+
 
 ### Limitations
 
