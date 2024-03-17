@@ -4,6 +4,13 @@
 
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
+- [Tools](#tools)
+- [Data Cleaning](#data-cleaning)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Analysis](#data-analysis)
+- [Results/Findings](#results/findings)
+- [Recommendations](#recommendations)
+- [Limitations](#limitations)
 
 ### Project Overview
 
@@ -116,6 +123,11 @@ visits.visit_count = 1
 - mornings and evenings have the longest queue times.
 - there were cases of impropriety by employees including accepting of cash bribes.
 - more women and children were victims of crime during their visits to the water sources than men.
+
+The detailed report can be found in the link below:
+
+
+https://app.powerbi.com/groups/me/reports/c5cd3a8e-ef7e-4f11-82a2-a84e41797946/ReportSection3bdd831df8f56c9f9778?experience=power-bi
 
 ### Recommendations
 
